@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+    <category label="Native Tongue">
+    	<setting id="lsep2" label="32001" type="lsep" enable="false" />
+    	<setting id="lsep2" label="32002" type="lsep" enable="false" />
+    	<setting id="language_string" label="32003" type="text" default=""/>
+    </category>
+</settings>
