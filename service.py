@@ -44,24 +44,34 @@ def log(msg, label=''):
 class myPlayer(xbmc.Player):
 
     def __init__(self, *args, **kwargs):
-        self.language_string = kwargs.get('language_string', 'eng')
-        self.check_audio = kwargs.(get'check_audio', False)
-        self.setting = kwargs.get(__setting__, '')
+       pass
 
 
     def onPlayBackStarted(self):
+
+        global language_string
+        global check_audio
+        global __setting__
+        
         # get the language setting
-        self.language_string = self.setting('language_string').lower()
-        self.check_audio = True
+        language_string = __setting__('language_string')
+        check_audio = True
+
+        log('check audio set to True, language string = %s' % language_string)
         
 
 
 def Main(__setting__):
 
+    global language_string
+    global check_audio
+
     language_string = ''
     check_audio = False # until challenged
 
-    tongue_player = myPlayer(language_string, check_audio, __setting__)
+    tongue_player = myPlayer()
+
+    log('service started')
 
     while not xbmc.abortRequested:
 
@@ -74,17 +84,22 @@ def Main(__setting__):
             check_audio = False
             
             streams = tongue_player.getAvailableAudioStreams()
+            log('streams found: %s' % streams)
 
             if streams:
-                if language_string in streams:
-                    log('changing audio stream')
-                    stream_number = streams.index(language_string)
-                    tongue_player.setAudioStream(stream_number)
+                for i, stream in enumerate(streams):
+                    if language_string in stream:
+                        log('changing audio stream')
+                        tongue_player.setAudioStream(i)
+                        break
                 else:
                     log('activating subtitles')
                     tongue_player.showSubtitles(True)
+            else:
+                log('no audio streams found')
 
 
 
 if __name__ == "__main__":
     Main(__setting__)
+    log('service exiting')

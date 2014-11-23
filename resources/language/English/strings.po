@@ -17,13 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "#32001"
-msgid "Help the addon identify the desired audio tracks by setting a search word."
+msgid "Help the addon identify the desired audio tracks by setting a key word."
 msgstr ""
 
 msgctxt "#32002"
-msgid "For english, the word would be 'eng'."
+msgid "For english, the key word would be 'eng'."
 msgstr ""
 
 msgctxt "#32003"
-msgid "Click here to set the search word."
+msgid "Click here to set the key word."
 msgstr ""
