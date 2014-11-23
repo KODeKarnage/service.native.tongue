@@ -9,8 +9,8 @@
     </requires>
     <extension point="xbmc.service" library="service.py" start="login"/>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Sets the audiostream to your language, and turns on sub-titles for videos that aren't.</summary>
-        <description lang="en">.</description>
+        <summary lang="en">Selects audiostream and subtitles automatically</summary>
+        <description lang="en">Sets the audiostream to your language, and turns on sub-titles for videos that aren't.</description>
         <disclaimer lang="en">.</disclaimer>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <platform>all</platform>

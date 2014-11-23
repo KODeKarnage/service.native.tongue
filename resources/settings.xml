@@ -3,6 +3,7 @@
     <category label="Native Tongue">
     	<setting id="lsep2" label="32001" type="lsep" enable="false" />
     	<setting id="lsep2" label="32002" type="lsep" enable="false" />
-    	<setting id="language_string" label="32003" type="text" default="eng"/>
+    	<setting id="select_lang" label="32003" type="action" option="close" action="RunScript($CWD/resources/lib/lang_sel.py)"/>
+    	<setting id="language_string" type="text" default="eng" visible="false"/>
     </category>
 </settings>

@@ -19,7 +19,9 @@
 
 import xbmc
 import xbmcaddon
-
+import sys
+import os
+sys.path.append(xbmc.translatePath(os.path.join(xbmcaddon.Addon().getAddonInfo('path'), 'resources','lib')))
 
 __addon__        = xbmcaddon.Addon('service.native.tongue')
 __addonid__      = __addon__.getAddonInfo('id')
@@ -29,6 +31,7 @@ addon_path       = xbmc.translatePath('special://home/addons')
 __setting__      = __addon__.getSetting
 
 check_audio = False
+
 
 def log(msg, label=''):
 
@@ -103,3 +106,7 @@ def Main(__setting__):
 if __name__ == "__main__":
     Main(__setting__)
     log('service exiting')
+
+
+
+
